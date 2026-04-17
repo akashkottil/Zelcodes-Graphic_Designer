@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" fill="none" role="img" aria-label="Zelcodes">
+  <defs>
+    <clipPath id="oc"><circle cx="36" cy="36" r="26"/></clipPath>
+    <radialGradient id="os" cx=".3" cy=".22" r=".72">
+      <stop offset="0" stop-color="#fff" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <text x="168" y="70" text-anchor="end" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="60" font-weight="800" letter-spacing="-3.2" fill="#0b0b14">zelc</text>
+
+  <g transform="translate(174 24) scale(0.722)">
+    <circle cx="36" cy="36" r="26" fill="#0b0b14"/>
+    <circle cx="36" cy="36" r="26" fill="url(#os)" clip-path="url(#oc)"/>
+    <ellipse cx="36" cy="36" rx="32" ry="13" fill="none" stroke="#0b0b14" stroke-opacity=".35" stroke-width="1.2" stroke-dasharray="2 3.5" transform="rotate(-30 36 36)"/>
+    <g transform="translate(36 36) rotate(-30) scale(1 0.406)">
+      <g transform="rotate(110)">
+        <circle cx="0" cy="-32" r="6" fill="#0b0b14" opacity=".15"/>
+        <circle cx="0" cy="-32" r="3.2" fill="#0b0b14"/>
+      </g>
+    </g>
+  </g>
+
+  <text x="232" y="70" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="60" font-weight="800" letter-spacing="-3.2" fill="#0b0b14">des</text>
+</svg>

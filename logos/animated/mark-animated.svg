@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" fill="none" role="img" aria-label="Zelcodes mark — animated">
+  <defs>
+    <clipPath id="oc"><circle cx="70" cy="70" r="52"/></clipPath>
+    <filter id="ob" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12"/></filter>
+    <filter id="oh" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="16"/></filter>
+    <radialGradient id="os" cx=".3" cy=".22" r=".72">
+      <stop offset="0" stop-color="#fff" stop-opacity=".65"/>
+      <stop offset=".35" stop-color="#fff" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="orim" x1="0" y1="0" x2="140" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity=".9"/>
+      <stop offset=".45" stop-color="#fff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".6"/>
+    </linearGradient>
+    <radialGradient id="oin" cx=".5" cy=".5" r=".5">
+      <stop offset=".75" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".45"/>
+    </radialGradient>
+    <radialGradient id="op" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".6" stop-color="#e0e7ff"/>
+      <stop offset="1" stop-color="#a5b4fc"/>
+    </radialGradient>
+  </defs>
+
+  <g filter="url(#oh)" opacity=".5">
+    <circle cx="48" cy="60" r="28" fill="#6366f1"/>
+    <circle cx="96" cy="60" r="28" fill="#ec4899"/>
+    <circle cx="70" cy="100" r="28" fill="#38bdf8"/>
+  </g>
+  <circle cx="70" cy="70" r="52" fill="#0b0b14"/>
+  <g clip-path="url(#oc)">
+    <g filter="url(#ob)">
+      <circle cx="44" cy="56" r="36" fill="#6366f1">
+        <animate attributeName="cx" values="44;84;56;44" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="56;44;88;56" dur="8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="100" cy="52" r="34" fill="#ec4899">
+        <animate attributeName="cx" values="100;68;108;100" dur="9s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="52;92;60;52" dur="9s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="68" cy="104" r="36" fill="#38bdf8">
+        <animate attributeName="cx" values="68;36;96;68" dur="10s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="104;72;44;104" dur="10s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <circle cx="70" cy="70" r="52" fill="url(#oin)"/>
+  </g>
+  <circle cx="70" cy="70" r="52" fill="url(#os)"/>
+  <circle cx="70" cy="70" r="52" fill="none" stroke="url(#orim)" stroke-width="2.4"/>
+  <ellipse cx="52" cy="42" rx="14" ry="6" fill="#fff" opacity=".45" transform="rotate(-30 52 42)"/>
+  <ellipse cx="70" cy="70" rx="64" ry="26" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="2" stroke-dasharray="4 7" transform="rotate(-30 70 70)">
+    <animate attributeName="stroke-dashoffset" values="0;-110" dur="6s" repeatCount="indefinite"/>
+  </ellipse>
+  <g transform="translate(70 70) rotate(-30) scale(1 0.406)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="4.5s" repeatCount="indefinite"/>
+      <circle cx="0" cy="-64" r="14" fill="#fff" opacity=".25"/>
+      <circle cx="0" cy="-64" r="7.2" fill="url(#op)"/>
+      <circle cx="0" cy="-64" r="3.2" fill="#fff"/>
+    </g>
+  </g>
+</svg>
