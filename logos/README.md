@@ -1,8 +1,12 @@
 # Zelcodes — Logo Asset Pack
 
-Brand lockup: **"zelcodes"** where the `o` is replaced by the Liquid-Orbit mark. Every file below is an SVG — fully editable, scales losslessly, and can be dropped into Figma / Illustrator / Keynote / web.
+Brand lockup: **"zelcodes"** where the `o` is replaced by the Liquid-Orbit mark. Every logo ships as **both an SVG** (fully editable, scales losslessly) **and a pre-rendered PNG** (type already rasterised with Inter 800 — drop-and-go for anywhere SVG isn't supported).
 
-All files use `font-family: Inter, -apple-system, system-ui, sans-serif`. For pixel-perfect typography, make sure **Inter 800** is installed locally (free at [rsms.me/inter](https://rsms.me/inter/)). Without Inter, the type falls back to your system sans.
+- **SVG** → Figma / Illustrator / Keynote / web
+- **PNG** → Slack / Notion / Pages / decks / anywhere without SVG support
+- **GIF** (animated folder only) → chat attachments, social, email signatures
+
+All SVGs use `font-family: Inter, -apple-system, system-ui, sans-serif`. For pixel-perfect typography when opening the **SVG** files, make sure **Inter 800** is installed locally (free at [rsms.me/inter](https://rsms.me/inter/)). The PNGs are already rendered with Inter embedded, so you never need to install a font to use them.
 
 ---
 
@@ -21,30 +25,30 @@ Both are ideal for: web embeds, slide-deck hero shots, looping social video intr
 
 ## `static-transparent/`
 
-Non-animated, transparent background. The orb renders from the same paint recipe as the live logo (one fixed photon position at ~110° on the orbit).
+Non-animated, transparent background. The orb renders from the same paint recipe as the live logo (one fixed photon position at ~110° on the orbit). Every file is available as both `.svg` and `.png` (PNGs rendered at **1600×400** for lockups and **560×560** for the mark, transparent).
 
-| File                          | Gradient                                                   | Use                                                                          |
-| ----------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `logo-gradient.svg`           | Full 4-stop: indigo → pink → sky → off-white               | The canonical brand lockup. Default choice.                                  |
-| `logo-gradient-vibrant.svg`   | 3-stop: indigo → pink → sky (no off-white tail)            | Saturated variant for tighter compositions where you want every letter rich. |
-| `logo-gradient-warm.svg`      | Indigo → pink → warm off-white (no sky)                    | Softer, more editorial feel. Good on neutral paper.                          |
-| `logo-mono-dark.svg`          | Solid `#0b0b14`                                            | Light backgrounds, print, one-colour contexts.                               |
-| `logo-mono-light.svg`         | Solid `#f4f5ff`                                            | Dark backgrounds, print reverse, one-colour contexts.                        |
-| `mark-only.svg`               | Brand mesh (full colour)                                   | Orb alone (140×140). Favicons, app icons, stickers, watermarks.              |
+| File                      | Gradient                                                   | Use                                                                          |
+| ------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `logo-gradient`           | Full 4-stop: indigo → pink → sky → off-white               | The canonical brand lockup. Default choice.                                  |
+| `logo-gradient-vibrant`   | 3-stop: indigo → pink → sky (no off-white tail)            | Saturated variant for tighter compositions where you want every letter rich. |
+| `logo-gradient-warm`      | Indigo → pink → warm off-white (no sky)                    | Softer, more editorial feel. Good on neutral paper.                          |
+| `logo-mono-dark`          | Solid `#0b0b14`                                            | Light backgrounds, print, one-colour contexts.                               |
+| `logo-mono-light`         | Solid `#f4f5ff`                                            | Dark backgrounds, print reverse, one-colour contexts.                        |
+| `mark-only`               | Brand mesh (full colour)                                   | Orb alone (140×140). Favicons, app icons, stickers, watermarks.              |
 
 ---
 
 ## `with-background/`
 
-Preset compositions at 800×400 — drop straight into a slide or social post.
+Preset compositions at 800×400 (PNGs rendered at **1600×800**) — drop straight into a slide or social post. Each comes as both `.svg` and `.png`.
 
-| File                  | Background                                            |
-| --------------------- | ----------------------------------------------------- |
-| `logo-on-dark.svg`    | Deep navy `#05060f` with three brand-colour glows     |
-| `logo-on-light.svg`   | Warm off-white `#fafbff` with three soft brand glows  |
-| `logo-on-brand.svg`   | Saturated indigo → pink → sky brand gradient field    |
+| File              | Background                                            |
+| ----------------- | ----------------------------------------------------- |
+| `logo-on-dark`    | Deep navy `#05060f` with three brand-colour glows     |
+| `logo-on-light`   | Warm off-white `#fafbff` with three soft brand glows  |
+| `logo-on-brand`   | Saturated indigo → pink → sky brand gradient field    |
 
-All three use the 4-stop brand gradient on the type except `logo-on-brand.svg`, which reverses to solid warm off-white (`#f5f1e8`) for contrast against the vibrant backdrop.
+All three use the 4-stop brand gradient on the type except `logo-on-brand`, which reverses to solid warm off-white (`#f5f1e8`) for contrast against the vibrant backdrop.
 
 ---
 

@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" fill="none" role="img" aria-label="Zelcodes — Something is about to orbit">
+  <defs>
+    <!-- Void-like mesh: smaller, subtler glows — more cosmic feel -->
+    <radialGradient id="bg-indigo" cx=".5" cy=".5" r=".35">
+      <stop offset="0" stop-color="#6366f1" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg-pink" cx=".82" cy=".3" r=".35">
+      <stop offset="0" stop-color="#ec4899" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#ec4899" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg-sky" cx=".18" cy=".72" r=".35">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Big hero orb -->
+    <clipPath id="orb-clip"><circle cx="540" cy="400" r="200"/></clipPath>
+    <filter id="orb-blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="44"/></filter>
+    <filter id="orb-halo" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="72"/></filter>
+    <filter id="outer-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="28"/></filter>
+    <radialGradient id="orb-sheen" cx=".3" cy=".22" r=".72">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".65"/>
+      <stop offset=".35" stop-color="#ffffff" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="orb-rim" x1="340" y1="200" x2="740" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".9"/>
+      <stop offset=".45" stop-color="#ffffff" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".6"/>
+    </linearGradient>
+    <radialGradient id="orb-inner" cx=".5" cy=".5" r=".5">
+      <stop offset=".75" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity=".5"/>
+    </radialGradient>
+    <radialGradient id="photon" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".6" stop-color="#e0e7ff"/>
+      <stop offset="1" stop-color="#a5b4fc"/>
+    </radialGradient>
+
+    <!-- Headline gradient — slightly muted so it reads as distant, mysterious -->
+    <linearGradient id="headline-grad" x1="100" y1="760" x2="980" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#818cf8"/>
+      <stop offset=".4" stop-color="#f472b6"/>
+      <stop offset=".75" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#f5f1e8"/>
+    </linearGradient>
+    <linearGradient id="headline-sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".4"/>
+      <stop offset=".4" stop-color="#ffffff" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="wm-grad" x1="0" y1="0" x2="1" y2="0.5">
+      <stop offset="0" stop-color="#818cf8"/>
+      <stop offset=".5" stop-color="#f472b6"/>
+      <stop offset="1" stop-color="#f5f1e8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ┌────────────────────────────────────────┐ -->
+  <!-- │  Background — deep void + soft mesh     │ -->
+  <!-- └────────────────────────────────────────┘ -->
+  <g id="layer-background">
+    <rect width="1080" height="1080" fill="#03040a"/>
+    <rect width="1080" height="1080" fill="url(#bg-indigo)"/>
+    <rect width="1080" height="1080" fill="url(#bg-pink)"/>
+    <rect width="1080" height="1080" fill="url(#bg-sky)"/>
+    <!-- Vignette darker at edges -->
+    <radialGradient id="vignette" cx=".5" cy=".5" r=".75">
+      <stop offset=".6" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".55"/>
+    </radialGradient>
+    <rect width="1080" height="1080" fill="url(#vignette)"/>
+  </g>
+
+  <!-- ┌────────────────────────────────────────┐ -->
+  <!-- │  Starfield                              │ -->
+  <!-- └────────────────────────────────────────┘ -->
+  <g id="layer-starfield" fill="#ffffff">
+    <!-- Bright stars with soft halo -->
+    <g opacity=".85">
+      <circle cx="110" cy="180" r="2.2"/>
+      <circle cx="110" cy="180" r="7" opacity=".15"/>
+      <circle cx="970" cy="120" r="2.6"/>
+      <circle cx="970" cy="120" r="8" opacity=".15"/>
+      <circle cx="900" cy="260" r="1.8"/>
+      <circle cx="900" cy="260" r="5" opacity=".12"/>
+      <circle cx="180" cy="320" r="1.5"/>
+      <circle cx="180" cy="320" r="4" opacity=".1"/>
+      <circle cx="940" cy="460" r="2"/>
+      <circle cx="940" cy="460" r="6" opacity=".12"/>
+      <circle cx="90" cy="540" r="1.6"/>
+      <circle cx="90" cy="540" r="5" opacity=".12"/>
+      <circle cx="1000" cy="610" r="1.8"/>
+      <circle cx="1000" cy="610" r="5" opacity=".12"/>
+    </g>
+    <!-- Faint pinpoint stars -->
+    <g opacity=".5">
+      <circle cx="240" cy="110" r=".8"/>
+      <circle cx="440" cy="90" r="1"/>
+      <circle cx="630" cy="150" r=".8"/>
+      <circle cx="740" cy="100" r="1.2"/>
+      <circle cx="350" cy="240" r=".8"/>
+      <circle cx="820" cy="350" r="1"/>
+      <circle cx="220" cy="480" r=".8"/>
+      <circle cx="990" cy="760" r="1"/>
+      <circle cx="100" cy="740" r="1.2"/>
+      <circle cx="60" cy="420" r=".8"/>
+      <circle cx="1030" cy="340" r=".9"/>
+      <circle cx="780" cy="600" r="1"/>
+      <circle cx="290" cy="600" r=".9"/>
+      <circle cx="870" cy="680" r=".8"/>
+    </g>
+  </g>
+
+  <!-- ┌────────────────────────────────────────┐ -->
+  <!-- │  Hero orb — dramatic, cinematic         │ -->
+  <!-- └────────────────────────────────────────┘ -->
+  <g id="layer-hero-orb">
+    <!-- Outer glow halo — larger, more atmospheric -->
+    <g filter="url(#orb-halo)" opacity=".55">
+      <circle cx="440" cy="360" r="140" fill="#6366f1"/>
+      <circle cx="640" cy="360" r="140" fill="#ec4899"/>
+      <circle cx="540" cy="500" r="140" fill="#38bdf8"/>
+    </g>
+
+    <!-- Widest orbit ring (very faint, aspirational distance) -->
+    <ellipse cx="540" cy="400" rx="370" ry="150" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="4 10" transform="rotate(-30 540 400)"/>
+
+    <!-- Main orb well -->
+    <circle cx="540" cy="400" r="200" fill="#0b0b14"/>
+
+    <!-- Mesh interior -->
+    <g clip-path="url(#orb-clip)">
+      <g filter="url(#orb-blur)">
+        <circle cx="450" cy="340" r="130" fill="#6366f1"/>
+        <circle cx="630" cy="380" r="124" fill="#ec4899"/>
+        <circle cx="520" cy="520" r="130" fill="#38bdf8"/>
+      </g>
+      <circle cx="540" cy="400" r="200" fill="url(#orb-inner)"/>
+    </g>
+
+    <!-- Glass sheen -->
+    <circle cx="540" cy="400" r="200" fill="url(#orb-sheen)"/>
+    <!-- Rim -->
+    <circle cx="540" cy="400" r="200" fill="none" stroke="url(#orb-rim)" stroke-width="3"/>
+    <!-- Specular pinch -->
+    <ellipse cx="460" cy="308" rx="50" ry="20" fill="#ffffff" opacity=".4" transform="rotate(-30 460 308)"/>
+
+    <!-- Photon orbit (inner, tilted) -->
+    <ellipse cx="540" cy="400" rx="246" ry="100" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2" stroke-dasharray="3 6" transform="rotate(-30 540 400)"/>
+
+    <!-- Photon on the orbit -->
+    <g transform="translate(540 400) rotate(-30) scale(1 0.407)">
+      <g transform="rotate(120)">
+        <circle cx="0" cy="-246" r="48" fill="#ffffff" opacity=".2"/>
+        <circle cx="0" cy="-246" r="22" fill="url(#photon)"/>
+        <circle cx="0" cy="-246" r="9" fill="#ffffff"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- ┌────────────────────────────────────────┐ -->
+  <!-- │  Transmission badge — top-center        │ -->
+  <!-- └────────────────────────────────────────┘ -->
+  <g id="layer-transmission">
+    <rect x="430" y="56" width="220" height="42" rx="21" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+    <circle cx="454" cy="77" r="4" fill="#f472b6"/>
+    <circle cx="454" cy="77" r="10" fill="#f472b6" opacity=".3"/>
+    <text x="473" y="83" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#f5f1e8">TRANSMISSION · 01</text>
+  </g>
+
+  <!-- ┌────────────────────────────────────────┐ -->
+  <!-- │  Cryptic headline                       │ -->
+  <!-- └────────────────────────────────────────┘ -->
+  <g id="layer-headline">
+    <!-- Base gradient fill -->
+    <g>
+      <text x="540" y="810" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="78" font-weight="800" letter-spacing="-3.8" fill="url(#headline-grad)">Something is about</text>
+      <text x="540" y="894" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="78" font-weight="800" letter-spacing="-3.8" fill="url(#headline-grad)">to orbit.</text>
+    </g>
+    <!-- Top glass sheen -->
+    <g>
+      <text x="540" y="810" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="78" font-weight="800" letter-spacing="-3.8" fill="url(#headline-sheen)">Something is about</text>
+      <text x="540" y="894" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="78" font-weight="800" letter-spacing="-3.8" fill="url(#headline-sheen)">to orbit.</text>
+    </g>
+  </g>
+
+  <!-- ┌────────────────────────────────────────┐ -->
+  <!-- │  Sub-tease                              │ -->
+  <!-- └────────────────────────────────────────┘ -->
+  <g id="layer-subtease">
+    <text x="540" y="952" text-anchor="middle" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="500" letter-spacing=".4" fill="#9aa0b8">Watch this space.</text>
+  </g>
+
+  <!-- ┌────────────────────────────────────────┐ -->
+  <!-- │  Brand watermark — minimal              │ -->
+  <!-- └────────────────────────────────────────┘ -->
+  <g id="layer-watermark" opacity=".85">
+    <!-- Tiny mini-orb + zelcodes text, centered -->
+    <g transform="translate(484 1020)">
+      <circle cx="12" cy="12" r="11" fill="#0b0b14"/>
+      <circle cx="12" cy="12" r="11" fill="url(#orb-sheen)"/>
+      <circle cx="12" cy="12" r="11" fill="none" stroke="#ffffff" stroke-opacity=".55" stroke-width=".8"/>
+      <circle cx="12" cy="12" r="2" fill="#ffffff"/>
+    </g>
+    <text x="510" y="1037" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" letter-spacing="-.7" fill="url(#wm-grad)">zelcodes</text>
+  </g>
+</svg>

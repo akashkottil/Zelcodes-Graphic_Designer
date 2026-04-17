@@ -1,0 +1,276 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" fill="none" role="img" aria-label="Zelcodes — Where SwiftUI devs orbit now">
+  <defs>
+    <!-- Background mesh glows -->
+    <radialGradient id="bg-indigo" cx=".15" cy=".18" r=".5">
+      <stop offset="0" stop-color="#6366f1" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg-pink" cx=".88" cy=".1" r=".5">
+      <stop offset="0" stop-color="#ec4899" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ec4899" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg-sky" cx=".25" cy=".82" r=".6">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Subtle dot grid -->
+    <pattern id="dot-grid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff"/>
+    </pattern>
+
+    <!-- Orb defs -->
+    <clipPath id="orb-clip"><circle cx="540" cy="460" r="160"/></clipPath>
+    <filter id="orb-blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="36"/></filter>
+    <filter id="orb-halo" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="54"/></filter>
+    <filter id="sat-glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="10"/></filter>
+    <radialGradient id="orb-sheen" cx=".3" cy=".22" r=".72">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".65"/>
+      <stop offset=".35" stop-color="#ffffff" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="orb-rim" x1="380" y1="300" x2="700" y2="620" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".9"/>
+      <stop offset=".45" stop-color="#ffffff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".65"/>
+    </linearGradient>
+    <radialGradient id="orb-inner" cx=".5" cy=".5" r=".5">
+      <stop offset=".75" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity=".45"/>
+    </radialGradient>
+    <radialGradient id="photon" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".6" stop-color="#e0e7ff"/>
+      <stop offset="1" stop-color="#a5b4fc"/>
+    </radialGradient>
+
+    <!-- Satellite glow gradients -->
+    <radialGradient id="sat-indigo" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#a5b4fc"/>
+      <stop offset=".5" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#312e81"/>
+    </radialGradient>
+    <radialGradient id="sat-pink" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fbcfe8"/>
+      <stop offset=".5" stop-color="#ec4899"/>
+      <stop offset="1" stop-color="#9d174d"/>
+    </radialGradient>
+    <radialGradient id="sat-sky" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#bae6fd"/>
+      <stop offset=".5" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#0369a1"/>
+    </radialGradient>
+
+    <!-- Headline diagonal gradient spanning the text area -->
+    <linearGradient id="headline-grad" x1="60" y1="720" x2="1020" y2="920" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset=".3" stop-color="#ec4899"/>
+      <stop offset=".7" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#f5f1e8"/>
+    </linearGradient>
+
+    <!-- Headline top sheen (glass highlight on the type) -->
+    <linearGradient id="headline-sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".55"/>
+      <stop offset=".35" stop-color="#ffffff" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Footer wordmark gradient -->
+    <!-- Warm gradient used by the footer wordmark (logo-gradient-warm recipe:
+         indigo → pink → warm off-white, no sky) -->
+    <linearGradient id="warm-grad" x1="50" y1="1005" x2="340" y2="1055" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset=".4" stop-color="#ec4899"/>
+      <stop offset="1" stop-color="#f5f1e8"/>
+    </linearGradient>
+
+    <!-- Small-orb defs (for the footer inline-orb) -->
+    <clipPath id="foc"><circle cx="36" cy="36" r="26"/></clipPath>
+    <filter id="fob" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="foh" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8"/></filter>
+    <radialGradient id="fos" cx=".3" cy=".22" r=".72">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".65"/>
+      <stop offset=".35" stop-color="#ffffff" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="foRim" x1="0" y1="0" x2="72" y2="72" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".9"/>
+      <stop offset=".45" stop-color="#ffffff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".6"/>
+    </linearGradient>
+    <radialGradient id="foIn" cx=".5" cy=".5" r=".5">
+      <stop offset=".75" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity=".45"/>
+    </radialGradient>
+    <radialGradient id="foPh" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".6" stop-color="#e0e7ff"/>
+      <stop offset="1" stop-color="#a5b4fc"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ┌────────────────────────────────────────┐ -->
+  <!-- │  background                             │ -->
+  <!-- └────────────────────────────────────────┘ -->
+  <g id="layer-background">
+    <rect width="1080" height="1080" fill="#05060f"/>
+    <rect width="1080" height="1080" fill="url(#bg-indigo)"/>
+    <rect width="1080" height="1080" fill="url(#bg-pink)"/>
+    <rect width="1080" height="1080" fill="url(#bg-sky)"/>
+    <rect width="1080" height="1080" fill="url(#dot-grid)" opacity=".07"/>
+  </g>
+
+  <!-- ┌────────────────────────────────────────┐ -->
+  <!-- │  eyebrow pill (top-left)                │ -->
+  <!-- └────────────────────────────────────────┘ -->
+  <g id="layer-eyebrow">
+    <rect x="60" y="62" width="268" height="44" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+    <circle cx="86" cy="84" r="5" fill="#38bdf8">
+      <animate attributeName="opacity" values="1;.35;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="106" y="90" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" letter-spacing="2.4" fill="#f5f1e8">LIVE · SWIFTUI ANIMATIONS</text>
+  </g>
+
+  <!-- ┌────────────────────────────────────────┐ -->
+  <!-- │  hero orb + orbit + satellites          │ -->
+  <!-- └────────────────────────────────────────┘ -->
+  <g id="layer-hero-orb">
+    <!-- Ambient halo behind the orb -->
+    <g filter="url(#orb-halo)" opacity=".55">
+      <circle cx="440" cy="400" r="110" fill="#6366f1"/>
+      <circle cx="640" cy="400" r="110" fill="#ec4899"/>
+      <circle cx="540" cy="560" r="110" fill="#38bdf8"/>
+    </g>
+
+    <!-- Outer satellite orbit ring (dashed, tilted -30°) -->
+    <ellipse cx="540" cy="460" rx="290" ry="116" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-dasharray="5 8" transform="rotate(-30 540 460)"/>
+
+    <!-- Back satellites (rendered BEFORE orb, so orb covers the part that goes behind) -->
+    <!-- Sat at 110° on outer orbit: ~(786, 361) — upper-right far -->
+    <g id="sat-back-1" filter="url(#sat-glow)" opacity=".9">
+      <circle cx="786" cy="361" r="24" fill="url(#sat-pink)"/>
+    </g>
+
+    <!-- Main orb (dark well) -->
+    <circle cx="540" cy="460" r="160" fill="#0b0b14"/>
+
+    <!-- Living mesh inside orb -->
+    <g clip-path="url(#orb-clip)">
+      <g filter="url(#orb-blur)">
+        <circle cx="460" cy="410" r="108" fill="#6366f1"/>
+        <circle cx="626" cy="430" r="102" fill="#ec4899"/>
+        <circle cx="520" cy="570" r="108" fill="#38bdf8"/>
+      </g>
+      <circle cx="540" cy="460" r="160" fill="url(#orb-inner)"/>
+    </g>
+
+    <!-- Glass sheen -->
+    <circle cx="540" cy="460" r="160" fill="url(#orb-sheen)"/>
+    <!-- Rim -->
+    <circle cx="540" cy="460" r="160" fill="none" stroke="url(#orb-rim)" stroke-width="3"/>
+    <!-- Specular pinch at top-left -->
+    <ellipse cx="474" cy="378" rx="40" ry="17" fill="#ffffff" opacity=".4" transform="rotate(-30 474 378)"/>
+
+    <!-- Inner tilted orbit ring (the photon's own orbit) -->
+    <ellipse cx="540" cy="460" rx="196" ry="80" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-dasharray="4 6" transform="rotate(-30 540 460)"/>
+
+    <!-- Photon on the inner orbit -->
+    <g transform="translate(540 460) rotate(-30) scale(1 0.408)">
+      <g transform="rotate(112)">
+        <circle cx="0" cy="-196" r="40" fill="#ffffff" opacity=".22"/>
+        <circle cx="0" cy="-196" r="18" fill="url(#photon)"/>
+        <circle cx="0" cy="-196" r="7.5" fill="#ffffff"/>
+      </g>
+    </g>
+
+    <!-- Front satellites (rendered AFTER orb, visually in front) -->
+    <g id="sat-front-1" filter="url(#sat-glow)">
+      <circle cx="614" cy="308" r="22" fill="url(#sat-indigo)"/>
+    </g>
+    <g id="sat-front-2" filter="url(#sat-glow)">
+      <circle cx="452" cy="608" r="18" fill="url(#sat-sky)"/>
+    </g>
+    <g id="sat-front-3" filter="url(#sat-glow)">
+      <circle cx="300" cy="538" r="28" fill="url(#sat-pink)"/>
+    </g>
+
+    <!-- Small sparkle accents -->
+    <circle cx="200" cy="230" r="2.5" fill="#ffffff" opacity=".6"/>
+    <circle cx="210" cy="230" r="6" fill="#ffffff" opacity=".12"/>
+    <circle cx="900" cy="200" r="2.5" fill="#ffffff" opacity=".6"/>
+    <circle cx="910" cy="200" r="6" fill="#ffffff" opacity=".12"/>
+    <circle cx="140" cy="640" r="2" fill="#ffffff" opacity=".5"/>
+    <circle cx="950" cy="620" r="2.5" fill="#ffffff" opacity=".6"/>
+  </g>
+
+  <!-- ┌────────────────────────────────────────┐ -->
+  <!-- │  headline — liquid-glass lockup         │ -->
+  <!-- └────────────────────────────────────────┘ -->
+  <g id="layer-headline">
+    <!-- Base gradient fill -->
+    <g>
+      <text x="60" y="790" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="96" font-weight="800" letter-spacing="-5" fill="url(#headline-grad)">Where SwiftUI devs</text>
+      <text x="60" y="890" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="96" font-weight="800" letter-spacing="-5" fill="url(#headline-grad)">orbit now.</text>
+    </g>
+    <!-- Top glass sheen -->
+    <g>
+      <text x="60" y="790" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="96" font-weight="800" letter-spacing="-5" fill="url(#headline-sheen)">Where SwiftUI devs</text>
+      <text x="60" y="890" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="96" font-weight="800" letter-spacing="-5" fill="url(#headline-sheen)">orbit now.</text>
+    </g>
+  </g>
+
+  <!-- ┌────────────────────────────────────────┐ -->
+  <!-- │  subhead                                │ -->
+  <!-- └────────────────────────────────────────┘ -->
+  <g id="layer-subhead">
+    <text x="60" y="942" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="500" letter-spacing="0" fill="#cbd5e1">500+ production-ready SwiftUI animations · new drops every week</text>
+  </g>
+
+  <!-- ┌────────────────────────────────────────┐ -->
+  <!-- │  Footer — full inline-orb lockup        │ -->
+  <!-- │  (matches logo-gradient-warm recipe)    │ -->
+  <!-- └────────────────────────────────────────┘ -->
+  <g id="layer-footer">
+    <!-- "zelc" ends at x=154, baseline y=1046, 44pt Inter 800 -->
+    <text x="154" y="1046" text-anchor="end" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="800" letter-spacing="-2.4" fill="url(#warm-grad)">zelc</text>
+
+    <!-- Inline orb — scaled 0.528 from 72-unit frame to fit between letters.
+         Centered at (180, 1032); orb visible radius ≈ 19 -->
+    <g transform="translate(158 1011) scale(0.528)">
+      <g filter="url(#foh)" opacity=".5">
+        <circle cx="24" cy="30" r="14" fill="#6366f1"/>
+        <circle cx="48" cy="30" r="14" fill="#ec4899"/>
+        <circle cx="36" cy="50" r="14" fill="#38bdf8"/>
+      </g>
+      <circle cx="36" cy="36" r="26" fill="#0b0b14"/>
+      <g clip-path="url(#foc)">
+        <g filter="url(#fob)">
+          <circle cx="24" cy="24" r="18" fill="#6366f1"/>
+          <circle cx="48" cy="28" r="17" fill="#ec4899"/>
+          <circle cx="32" cy="52" r="18" fill="#38bdf8"/>
+        </g>
+        <circle cx="36" cy="36" r="26" fill="url(#foIn)"/>
+      </g>
+      <circle cx="36" cy="36" r="26" fill="url(#fos)"/>
+      <circle cx="36" cy="36" r="26" fill="none" stroke="url(#foRim)" stroke-width="1.3"/>
+      <ellipse cx="27" cy="22" rx="7" ry="3" fill="#ffffff" opacity=".45" transform="rotate(-30 27 22)"/>
+      <ellipse cx="36" cy="36" rx="32" ry="13" fill="none" stroke="#ffffff" stroke-opacity=".3" stroke-width="1.2" stroke-dasharray="2 3.5" transform="rotate(-30 36 36)"/>
+      <g transform="translate(36 36) rotate(-30) scale(1 0.406)">
+        <g transform="rotate(110)">
+          <circle cx="0" cy="-32" r="7" fill="#ffffff" opacity=".25"/>
+          <circle cx="0" cy="-32" r="3.6" fill="url(#foPh)"/>
+          <circle cx="0" cy="-32" r="1.6" fill="#ffffff"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- "des" starts at x=204, same baseline -->
+    <text x="204" y="1046" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="800" letter-spacing="-2.4" fill="url(#warm-grad)">des</text>
+
+    <!-- URL on the right -->
+    <g transform="translate(1020 1040)">
+      <text x="0" y="0" text-anchor="end" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="600" letter-spacing="-0.3" fill="#f5f1e8">zelcodes.com →</text>
+    </g>
+  </g>
+</svg>
