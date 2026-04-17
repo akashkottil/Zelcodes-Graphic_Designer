@@ -52,9 +52,19 @@
       <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
 
-    <linearGradient id="wm-grad" x1="0" y1="0" x2="1" y2="0.5">
-      <stop offset="0" stop-color="#818cf8"/>
-      <stop offset=".5" stop-color="#f472b6"/>
+    <!-- Watermark orb defs (for the small inline-orb lockup in the footer) -->
+    <clipPath id="w-clip"><circle cx="36" cy="36" r="26"/></clipPath>
+    <linearGradient id="w-rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".9"/>
+      <stop offset=".45" stop-color="#ffffff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".6"/>
+    </linearGradient>
+
+    <!-- Warm wordmark gradient spanning the full lockup (logo-gradient-warm
+         recipe: indigo → pink → warm off-white, no sky) -->
+    <linearGradient id="warm-lockup" x1="455" y1="1020" x2="625" y2="1048" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset=".45" stop-color="#ec4899"/>
       <stop offset="1" stop-color="#f5f1e8"/>
     </linearGradient>
   </defs>
@@ -196,16 +206,33 @@
   </g>
 
   <!-- ┌────────────────────────────────────────┐ -->
-  <!-- │  Brand watermark — minimal              │ -->
+  <!-- │  Brand watermark — logo-gradient-warm   │ -->
+  <!-- │  Full inline-orb lockup, centered        │ -->
   <!-- └────────────────────────────────────────┘ -->
-  <g id="layer-watermark" opacity=".85">
-    <!-- Tiny mini-orb + zelcodes text, centered -->
-    <g transform="translate(484 1020)">
-      <circle cx="12" cy="12" r="11" fill="#0b0b14"/>
-      <circle cx="12" cy="12" r="11" fill="url(#orb-sheen)"/>
-      <circle cx="12" cy="12" r="11" fill="none" stroke="#ffffff" stroke-opacity=".55" stroke-width=".8"/>
-      <circle cx="12" cy="12" r="2" fill="#ffffff"/>
+  <g id="layer-watermark" opacity=".95">
+    <!-- "zelc" — text-anchor end at x=525, baseline y=1040 -->
+    <text x="525" y="1040" text-anchor="end" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" letter-spacing="-1.5" fill="url(#warm-lockup)">zelc</text>
+
+    <!-- Inline orb in the footer — scaled 0.444× from the 72-unit frame
+         so the visible orb body is ~23px in diameter; centered at (540, 1030) -->
+    <g transform="translate(524 1014) scale(0.444)">
+      <!-- Dark well -->
+      <circle cx="36" cy="36" r="26" fill="#0b0b14"/>
+      <!-- Mesh interior (no blur at this scale — use opacity for softness) -->
+      <g clip-path="url(#w-clip)">
+        <circle cx="24" cy="24" r="20" fill="#6366f1" opacity=".78"/>
+        <circle cx="48" cy="28" r="20" fill="#ec4899" opacity=".78"/>
+        <circle cx="32" cy="52" r="20" fill="#38bdf8" opacity=".78"/>
+        <circle cx="36" cy="36" r="26" fill="url(#orb-inner)"/>
+      </g>
+      <!-- Sheen + rim -->
+      <circle cx="36" cy="36" r="26" fill="url(#orb-sheen)"/>
+      <circle cx="36" cy="36" r="26" fill="none" stroke="url(#w-rim)" stroke-width="2.2"/>
+      <!-- Specular pinch -->
+      <ellipse cx="27" cy="22" rx="6" ry="3" fill="#ffffff" opacity=".45" transform="rotate(-30 27 22)"/>
     </g>
-    <text x="510" y="1037" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" letter-spacing="-.7" fill="url(#wm-grad)">zelcodes</text>
+
+    <!-- "des" — text-anchor start at x=555, same baseline -->
+    <text x="555" y="1040" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" letter-spacing="-1.5" fill="url(#warm-lockup)">des</text>
   </g>
 </svg>
