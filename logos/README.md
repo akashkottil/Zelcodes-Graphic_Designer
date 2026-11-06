@@ -1,97 +1,44 @@
-# Zelcodes — Logo Asset Pack
+# Zelcodes — Logo
 
-Brand lockup: **"zelcodes"** where the `o` is replaced by the Liquid-Orbit mark. Every logo ships as **both an SVG** (fully editable, scales losslessly) **and a pre-rendered PNG** (type already rasterised with Inter 800 — drop-and-go for anywhere SVG isn't supported).
+![Brand sheet](brand-sheet.png)
 
-- **SVG** → Figma / Illustrator / Keynote / web
-- **PNG** → Slack / Notion / Pages / decks / anywhere without SVG support
-- **GIF** (animated folder only) → chat attachments, social, email signatures
+The logo is a **handwritten "zelcodes"**: one even, rounded pen line in a connected script, rendered in **liquid glass**
+(frosted body, bright top highlight, light rim, soft shadow). Construction and rules: `graphicdesigner.md` §5.
 
-All SVGs use `font-family: Inter, -apple-system, system-ui, sans-serif`. For pixel-perfect typography when opening the **SVG** files, make sure **Inter 800** is installed locally (free at [rsms.me/inter](https://rsms.me/inter/)). The PNGs are already rendered with Inter embedded, so you never need to install a font to use them.
+## `static-transparent/` (PNG, transparent, 2400 px wide)
 
----
+| File | Use |
+|---|---|
+| `zelcodes-logo-glass.png` | **Default.** Dark or colourful backgrounds, video, covers |
+| `zelcodes-logo-white.png` | Photos and busy backgrounds |
+| `zelcodes-logo-gradient.png` | Brand gradient (indigo → pink → sky) on dark |
+| `zelcodes-logo-ink.png` | Light backgrounds, documents, print |
 
-## `animated/`
-
-SMIL-animated SVGs. Open in any modern browser and they animate without any JS: mesh blobs drift inside the orb, the photon traces the tilted diagonal orbit, orbit dashes flow. Chrome / Edge / Safari animate fully; Firefox shows the first frame as a static snapshot.
-
-| File                  | Use                                            |
-| --------------------- | ---------------------------------------------- |
-| `logo-animated.svg`   | Full `zelc{orb}des` lockup, transparent bg     |
-| `mark-animated.svg`   | Orb only (140×140), transparent bg             |
-
-Both are ideal for: web embeds, slide-deck hero shots, looping social video intros (export to MP4 via `puppeteer` or a browser screen-capture).
-
----
-
-## `static-transparent/`
-
-Non-animated, transparent background. The orb renders from the same paint recipe as the live logo (one fixed photon position at ~110° on the orbit). Every file is available as both `.svg` and `.png` (PNGs rendered at **1600×400** for lockups and **560×560** for the mark, transparent).
-
-| File                      | Gradient                                                   | Use                                                                          |
-| ------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `logo-gradient`           | Full 4-stop: indigo → pink → sky → off-white               | The canonical brand lockup. Default choice.                                  |
-| `logo-gradient-vibrant`   | 3-stop: indigo → pink → sky (no off-white tail)            | Saturated variant for tighter compositions where you want every letter rich. |
-| `logo-gradient-warm`      | Indigo → pink → warm off-white (no sky)                    | Softer, more editorial feel. Good on neutral paper.                          |
-| `logo-mono-dark`          | Solid `#0b0b14`                                            | Light backgrounds, print, one-colour contexts.                               |
-| `logo-mono-light`         | Solid `#f4f5ff`                                            | Dark backgrounds, print reverse, one-colour contexts.                        |
-| `mark-only`               | Brand mesh (full colour)                                   | Orb alone (140×140). Favicons, app icons, stickers, watermarks.              |
-
----
+The glass logo needs something behind it; on white or very light backgrounds use the ink version.
 
 ## `with-background/`
 
-Preset compositions at 800×400 (PNGs rendered at **1600×800**) — drop straight into a slide or social post. Each comes as both `.svg` and `.png`.
+| File | Use |
+|---|---|
+| `zelcodes-logo-glass-on-dark-16x9.png` | Hero image: glass logo on a dark, out-of-focus background (3840×2160) |
 
-| File              | Background                                            |
-| ----------------- | ----------------------------------------------------- |
-| `logo-on-dark`    | Deep navy `#05060f` with three brand-colour glows     |
-| `logo-on-light`   | Warm off-white `#fafbff` with three soft brand glows  |
-| `logo-on-brand`   | Saturated indigo → pink → sky brand gradient field    |
+## `social/` (1:1)
 
-All three use the 4-stop brand gradient on the type except `logo-on-brand`, which reverses to solid warm off-white (`#f5f1e8`) for contrast against the vibrant backdrop.
+| File | Use |
+|---|---|
+| `zelcodes-profile-dark-1080.png` | **Default avatar**: glass logo on the dark blurred background |
+| `zelcodes-profile-light-1080.png` | Ink logo on off-white, for light-themed platforms |
+| `zelcodes-profile-gradient-1080.png` | White logo on the brand gradient |
+| `*-400.png` | Same, pre-sized for small avatars |
+| `zelcodes-wordmark-square-{dark,light}-1080.png` | Square tiles that are not circle-cropped |
 
----
+Every avatar keeps the logo inside the circular crop that Instagram, X, YouTube and GitHub apply.
 
-## Gradient recipes
+## `font/`
 
-All gradients are `linearGradient` at roughly 115° (top-left → bottom-right) over the full lockup width, so the colour flows continuously from the leading `z` through the orb to the trailing `s`.
+`MeowScript-Regular.ttf` (SIL Open Font License, `MeowScript-OFL.txt`). The logo is this font thickened by 9 % of the
+x-height with round joins — don't use the font at its native weight as the logo.
 
-| Variant      | Stops                                                                  |
-| ------------ | ---------------------------------------------------------------------- |
-| Full         | `#6366f1 0%` · `#ec4899 32%` · `#38bdf8 70%` · `#f5f1e8 100%`          |
-| Vibrant      | `#6366f1 0%` · `#ec4899 50%` · `#38bdf8 100%`                          |
-| Warm         | `#6366f1 0%` · `#ec4899 40%` · `#f5f1e8 100%`                          |
+## `legacy-liquid-orbit/`
 
----
-
-## Exporting to PNG / PDF / favicon
-
-Open any SVG in a browser and "Save As" to get raster exports, or run:
-
-```bash
-# PNG @ 4x
-rsvg-convert -z 4 logo-gradient.svg -o logo-gradient@4x.png
-
-# PDF (preserves vectors)
-rsvg-convert -f pdf logo-gradient.svg -o logo-gradient.pdf
-
-# Favicon (32×32 from mark-only)
-rsvg-convert -h 32 -w 32 mark-only.svg -o favicon-32.png
-```
-
-(install `rsvg-convert` via `brew install librsvg` if needed.)
-
----
-
-## Editing tips
-
-- Open any SVG in a text editor — the file is heavily commented via ids (`text`, `oc`, `ob`, `orim`, `op`, etc.) so you can retune.
-- The **photon angle** is controlled by `rotate(110)` in the innermost `<g>` of the photon — change to move the dot around the tilted orbit (0° is the top of the un-tilted ellipse; try 30°, 150°, 220°).
-- The **orbit tilt** is controlled by `rotate(-30)` on the photon group AND the `<ellipse>` transform — keep them matched.
-- The **text gradient** uses `gradientUnits="userSpaceOnUse"` so it spans the whole viewBox — move stops or change hex to explore colour fades.
-
----
-
-## License
-
-These assets are the visual identity of Zelcodes by Akash Kottil. Reuse is fine for anything related to the Zelcodes project (documentation, ports, articles, press). Everywhere else: ask first.
+The previous logo (the `zelc◉des` lockup with the Liquid Orbit orb), kept for reference only. Don't use it in new work.

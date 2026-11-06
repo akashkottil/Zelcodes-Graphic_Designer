@@ -4,7 +4,7 @@ A complete design-language reference for the Zelcodes brand (website, app, marke
 
 The brand has **two defining visual elements** that every asset should reference:
 
-1. **The Liquid Orbit** — a 3D glass orb with a living mesh-gradient interior and a comet orbiting on a tilted diagonal ellipse.
+1. **The logo** — a handwritten `zelcodes`: one even, rounded pen line, written in **liquid glass** (frosted body, bright top highlight, light rim, soft shadow). See §5 and `logos/`.
 2. **Liquid-glass typography** — inflated, bubble-like letters filled with a continuous diagonal mesh gradient, lit from above, with a travelling specular streak.
 
 Everything else in the brand — backgrounds, cards, buttons, type sets — exists to support those two elements.
@@ -95,7 +95,10 @@ linear-gradient(110deg,
 
 ---
 
-## 4 · The Liquid Orbit (signature mark)
+## 4 · The Liquid Orbit (decorative art — no longer the logo)
+
+> Since November 2026 the logo is the handwritten glass wordmark in §5. The orb below is no longer part of the logo
+> and must not be combined with it. It may still appear as decorative art (hero illustration, accents).
 
 ### 4.1 Concept
 
@@ -133,52 +136,43 @@ At 16×16 most detail disappears. For small sizes:
 
 ---
 
-## 5 · Liquid-glass wordmark ("zelcodes")
+## 5 · Logo — handwritten glass wordmark ("zelcodes")
 
 ### 5.1 Concept
 
-Inflated, bubble-like letterforms that look like they were blown from the same glass as the orb. Each letter is filled with the **continuous diagonal brand gradient** (so colour flows across the entire word, not per-letter) and topped with a **bright specular sheen** that reads the letters as 3D glass rather than flat typography. A travelling specular streak sweeps across every few seconds, making the type feel freshly lit.
+The word `zelcodes` written by hand in one flowing, connected script — like a greeting written on a new device —
+with a single, even pen weight and rounded ends. It is rendered in **liquid glass**, so it matches the rest of the
+brand's glass language while feeling personal and human.
 
-### 5.2 Composition
+### 5.2 Construction
 
-The wordmark is `zelcodes` with the `o` **replaced by a small Liquid Orbit mark** that sits inline. The orb's size ≈ 0.95× the font size, translated `+0.08em` on Y so it rests on the baseline like a real letter.
+- Letterforms: **Meow Script** (SIL Open Font License), lowercase `zelcodes`.
+- The outline is **thickened by 9 % of the x-height** with round joins and caps, which turns the script into an
+  even monoline with rounded terminals. Never use the font at its native weight for the logo.
+- No orb, no extra marks, no tagline locked to it.
 
-### 5.3 Typography
+### 5.3 Glass recipe (all clipped to the letter shape)
 
-- **Inter 800**, `font-size 22–42px` for navbar / footer / poster display
-- **Letter-spacing −0.055em**
-- **Line-height 1.0**
+1. Soft drop shadow (black ~65 %, offset down ~0.3× stroke, blur ~1.1× stroke) plus a faint indigo-white outer glow.
+2. Frosted body: the background behind the logo, blurred (~0.8× stroke), brightened and more saturated; then a
+   milky white layer (40 % over a background, ~80 % for the standalone transparent file).
+3. A whisper of the brand gradient (indigo → pink → sky at 115°, 25–30 % opacity).
+4. Light falloff top → bottom; inner shade along the lower edges of each stroke.
+5. Bright specular line along the upper edges; soft inner glow all round.
+6. Hairline white rim (~70 %).
 
-### 5.4 Glass effect (layered, all clipped to text)
+### 5.4 Versions & usage
 
-Applied on the outer lockup span:
+| Version | Use |
+|---|---|
+| Glass | Default. Dark or colourful backgrounds, video, covers, avatars |
+| White | Photos and busy backgrounds |
+| Gradient (indigo → pink → sky) | Dark backgrounds where colour is wanted |
+| Ink `#0b0b14` | Light backgrounds, documents, print |
 
-1. **Static top sheen** (layer 1):
-   ```
-   linear-gradient(180deg,
-     rgba(255,255,255,0.55) 0%,
-     rgba(255,255,255,0.15) 30%,
-     rgba(255,255,255,0)    60%)
-   ```
-2. **Continuous diagonal colour** (layer 2):
-   ```
-   linear-gradient(115deg,
-     #6366f1 0%, #ec4899 32%,
-     #38bdf8 70%, #f5f1e8 100%)
-   ```
-   at `background-size: 220% 100%`. Animated left-right over 8s to create a flowing shimmer.
-
-Both layers are `-webkit-background-clip: text; color: transparent;` so the gradient paints only within the glyph shapes.
-
-### 5.5 Glow (drop-shadow stack)
-
-```
-filter:
-  drop-shadow(0 2px 3px rgba(0,0,0,0.18))
-  drop-shadow(0 0 18px rgba(129,140,248,0.38));
-```
-
-First shadow grounds the letters on the surface; second halo echoes the orb's ambient glow.
+- The glass version needs something behind it. On white or very light backgrounds use Ink.
+- Clear space: at least the height of the `e` on every side. Minimum width: 120 px on screen.
+- Don't recolour, outline, stretch, rotate or re-letter it.
 
 ---
 
@@ -324,14 +318,14 @@ When generating a poster / social card / print piece, compose from these brand i
 ### 11.1 Must-haves (every poster)
 
 - One or more appearances of the **brand triad** (indigo + pink + sky). Off-white may appear as a highlight.
-- The **Liquid Orbit mark** somewhere on the canvas — hero element, accent, or watermark. Its size telegraphs hierarchy.
+- The **zelcodes glass logo** somewhere on the canvas — hero element, header or sign-off. Its size telegraphs hierarchy.
 - Type set in **Inter 700–800**, tight tracking, with at least one element using the **continuous diagonal gradient** as a fill.
 - A hint of motion — either actual motion (GIF / Lottie) or implied (trailing dots, ghost-layers, drop-shadow blur, streak).
 
 ### 11.2 Default composition
 
 - Dark or neutral mesh-gradient background (three soft brand blobs, heavy blur).
-- Hero element: the Liquid Orbit at large scale, off-center, with its tilted orbit ring prominent.
+- Hero element: the product itself (an animation, device or UI), with the glass logo as header or sign-off.
 - Display type in liquid-glass style (continuous diagonal gradient + bright top sheen).
 - Supporting copy in muted foreground, short lines.
 - Sparse use of glass cards/pills if the poster carries secondary info (date, URL, CTA).
@@ -349,11 +343,11 @@ When generating a poster / social card / print piece, compose from these brand i
 - Don't use solid rectangles or hard edges for primary shapes. Prefer squircles, circles, blobs.
 - Don't use heavy drop shadows in neutral black. Colored glows only.
 - Don't use more than **one** mesh gradient "weight" per composition — mesh is the hero surface, not wallpaper-texture.
-- Don't let typography compete with the orb. The orb is the focal point; type supports.
+- Don't let typography compete with the logo, and never pair the logo with the old orb mark.
 
 ### 11.5 Quick poster recipe (for AI prompting)
 
-> *"Dark navy-to-black background with three large blurred brand-color glows (indigo top-left, pink top-right, sky bottom). Center-left: a Liquid Orbit mark (dark glass orb with living mesh gradient inside, tilted diagonal elliptical orbit ring and a glowing white comet on the orbit at 30° angle). Right side: a two-line headline in Inter 800, 64px, tight tracking, filled with a 115° gradient from indigo → pink → sky → warm off-white, bright white specular highlight along the top of each letter. Subtle colored drop-shadow glow on the type. Thin glass pill with 11px uppercase eyebrow text at the top. Footer: one line in muted foreground."*
+> *"Dark navy-to-black background with three large blurred brand-color glows (indigo top-left, pink top-right, sky bottom). Top centre: the handwritten "zelcodes" logo in frosted liquid glass (even monoline script, bright top highlight, light rim, soft shadow). Right side: a two-line headline in Inter 800, 64px, tight tracking, filled with a 115° gradient from indigo → pink → sky → warm off-white, bright white specular highlight along the top of each letter. Subtle colored drop-shadow glow on the type. Thin glass pill with 11px uppercase eyebrow text at the top. Footer: one line in muted foreground."*
 
 ---
 
@@ -361,8 +355,8 @@ When generating a poster / social card / print piece, compose from these brand i
 
 - **Tech stack**: Next.js (App Router) + Tailwind CSS 4 + Framer Motion + next-themes.
 - **Fonts**: `next/font/google` Inter + JetBrains Mono.
-- **Animated logo**: `src/components/AnimatedLogo.tsx` (Framer Motion + SMIL concepts).
-- **Wordmark lockup**: `src/components/Logotype.tsx`.
+- **Logo files**: `logos/` in this repo (glass, white, gradient, ink; social avatars).
+- **Website logo components** (`src/components/AnimatedLogo.tsx`, `src/components/Logotype.tsx`) still draw the old orb lockup and need updating to the new logo.
 - **Mesh**: `src/components/MeshGradient.tsx`.
 - **Tokens**: `src/app/globals.css` (CSS custom properties + Tailwind `@theme` block).
 - **Favicon**: `src/app/icon.svg` (SMIL-animated miniature orb).
